@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>顧客カードボックス</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #1f2420;
@@ -19,6 +17,10 @@
     --rule: rgba(38,36,29,0.18);
     --danger: #a4432f;
     --teal: #2f6b5e;
+    /* インターネット接続なしでも表示できるよう、OS標準のフォントのみを使用 */
+    --font-display: Georgia, 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'MS Gothic', monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, 'Segoe UI', sans-serif;
   }
   *{ box-sizing: border-box; }
   html,body{
@@ -28,7 +30,7 @@
       radial-gradient(circle at 15% 10%, rgba(255,255,255,0.03), transparent 40%),
       radial-gradient(circle at 85% 90%, rgba(255,255,255,0.03), transparent 40%);
     color: var(--card);
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     min-height: 100vh;
   }
   ::selection{ background: var(--mustard); color: var(--bg); }
@@ -50,7 +52,7 @@
     flex-wrap: wrap;
   }
   .brand-label{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -58,14 +60,14 @@
     margin: 0 0 6px;
   }
   h1{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-weight: 500;
     font-size: 34px;
     margin: 0;
     letter-spacing: 0.01em;
   }
   .count-badge{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 13px;
     color: rgba(240,233,216,0.65);
   }
@@ -81,7 +83,7 @@
     background: transparent;
     border: 1px solid rgba(240,233,216,0.25);
     color: rgba(240,233,216,0.75);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11.5px;
     padding: 7px 12px;
     border-radius: 3px;
@@ -106,7 +108,7 @@
     background: var(--bg-2);
     border: 1px solid rgba(240,233,216,0.18);
     color: var(--card);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 14px;
     padding: 11px 14px 11px 34px;
     border-radius: 3px;
@@ -126,7 +128,7 @@
     background: var(--mustard);
     color: #201a0a;
     border: none;
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     font-size: 14px;
     padding: 11px 20px;
@@ -141,7 +143,7 @@
     background: var(--teal);
     color: #f2f7f5;
     border: none;
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     font-size: 14px;
     padding: 11px 18px;
@@ -160,7 +162,7 @@
     margin-bottom: 26px;
   }
   .tab-rail button{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     background: transparent;
     color: rgba(240,233,216,0.45);
@@ -215,7 +217,7 @@
     margin-bottom: 9px;
   }
   .card .company{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-size: 19px;
     font-weight: 600;
     line-height: 1.25;
@@ -223,7 +225,7 @@
     padding-right: 14px;
   }
   .card .person-line{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12.5px;
     color: var(--ink-soft);
   }
@@ -232,7 +234,7 @@
     font-weight: 600;
   }
   .card .field{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--ink-soft);
     display:flex;
@@ -258,7 +260,7 @@
     border-top: 1px dashed rgba(164,67,47,0.35);
   }
   .card .equip-summary .eq-head{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.05em;
     color: var(--teal);
@@ -273,7 +275,7 @@
     list-style: none;
   }
   .card .equip-summary li{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--ink);
     padding: 2px 0;
@@ -286,7 +288,7 @@
     color: var(--danger);
   }
   .card .equip-more{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     color: var(--ink-soft);
     margin-top: 2px;
@@ -298,7 +300,7 @@
     gap: 6px;
   }
   .card .tag{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 10.5px;
     background: rgba(38,36,29,0.08);
     color: var(--ink-soft);
@@ -313,12 +315,12 @@
     border-radius: 50%;
     background: rgba(38,36,29,0.06);
     color: var(--ink-soft);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     display:flex; align-items:center; justify-content:center;
   }
   .last-updated{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 10.5px;
     color: rgba(38,36,29,0.45);
     margin-top: 8px;
@@ -332,12 +334,12 @@
     color: rgba(240,233,216,0.5);
   }
   .empty .glyph{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-size: 44px;
     color: rgba(240,233,216,0.25);
     margin-bottom: 10px;
   }
-  .empty p{ font-family:'IBM Plex Mono', monospace; font-size: 13px; margin: 4px 0; }
+  .empty p{ font-family: var(--font-mono); font-size: 13px; margin: 4px 0; }
 
   /* ---------- overlay / modal base ---------- */
   .overlay{
@@ -362,7 +364,7 @@
     box-shadow: 0 30px 60px rgba(0,0,0,0.45);
   }
   .modal h2{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-size: 22px;
     font-weight: 600;
     margin: 0 0 18px;
@@ -370,7 +372,7 @@
   .form-row{ margin-bottom: 14px; }
   .form-row label{
     display:block;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -379,7 +381,7 @@
   }
   .form-row input, .form-row textarea{
     width: 100%;
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     padding: 9px 10px;
     border: 1px solid rgba(38,36,29,0.22);
@@ -403,7 +405,7 @@
     border-top: 1px solid var(--rule);
   }
   .btn{
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 600;
     padding: 9px 16px;
@@ -434,7 +436,7 @@
   }
   .equip-section > label{
     display:block;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -443,7 +445,7 @@
   }
   .equip-section.competitor > label{ color: var(--danger); }
   .equip-section .section-hint{
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 11px;
     color: var(--ink-soft);
     margin-bottom: 8px;
@@ -465,7 +467,7 @@
   .equip-row.comp-r1{ grid-template-columns: 1.2fr 1fr 0.9fr auto; }
   .equip-row.comp-r2{ grid-template-columns: 1fr 0.75fr 1.3fr; }
   .equip-row input{
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 12.5px;
     padding: 7px 8px;
     border: 1px solid rgba(38,36,29,0.22);
@@ -489,7 +491,7 @@
     background: transparent;
     border: 1px dashed var(--teal);
     color: var(--teal);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     padding: 6px 12px;
     border-radius: 2px;
@@ -509,7 +511,7 @@
   }
   .equip-col-labels.own{ grid-template-columns: 1.2fr 0.9fr 1fr 0.75fr 1.1fr auto; }
   .equip-col-labels span{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 9.5px;
     color: var(--ink-soft);
     letter-spacing: 0.04em;
@@ -529,25 +531,25 @@
     margin-bottom: 16px;
   }
   .call-head .co{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-size: 26px;
     font-weight: 600;
     line-height: 1.2;
     margin: 0 0 4px;
   }
   .call-head .who{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 14px;
     color: var(--ink-soft);
   }
   .last-updated-call{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11.5px;
     color: var(--ink-soft);
     margin-top: 2px;
   }
   .call-phone-pill{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 20px;
     font-weight: 600;
     background: var(--ink);
@@ -561,7 +563,7 @@
     margin-bottom: 18px;
   }
   .call-section .sec-label{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -574,7 +576,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 14px;
   }
   .call-contact-grid div span.k{
@@ -588,7 +590,7 @@
   .equip-table{
     width: 100%;
     border-collapse: collapse;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 13.5px;
   }
   .equip-table.competitor th{ color: var(--danger); }
@@ -613,7 +615,7 @@
     display:inline-flex;
     align-items:center;
     gap: 4px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12.5px;
     color: var(--teal);
     text-decoration: none;
@@ -622,13 +624,13 @@
   }
   .equip-link:hover{ color: #1f4a41; border-color: #1f4a41; }
   .equip-empty-note{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 13px;
     color: var(--ink-soft);
     font-style: italic;
   }
   .call-notes{
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     line-height: 1.7;
     white-space: pre-wrap;
@@ -665,7 +667,7 @@
     margin-bottom: 22px;
   }
   .phone-header .ph-title{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-size: 26px;
     font-weight: 600;
     margin: 0;
@@ -681,7 +683,7 @@
     background: transparent;
     border: 1px solid rgba(240,233,216,0.3);
     color: rgba(240,233,216,0.75);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12.5px;
     padding: 8px 14px;
     border-radius: 3px;
@@ -693,7 +695,7 @@
     background: var(--card);
     color: var(--ink);
     border: none;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 19px;
     padding: 16px 18px;
     border-radius: 3px;
@@ -725,18 +727,18 @@
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   }
   .phone-result-row .pr-left .pr-co{
-    font-family: 'Fraunces', serif;
+    font-family: var(--font-display);
     font-size: 17px;
     font-weight: 600;
     margin: 0 0 2px;
   }
   .phone-result-row .pr-left .pr-who{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--ink-soft);
   }
   .phone-result-row .pr-phone{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 15px;
     font-weight: 600;
     color: var(--teal);
@@ -746,7 +748,7 @@
     text-align:center;
     padding: 60px 20px;
     color: rgba(240,233,216,0.5);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 13px;
   }
 
@@ -754,7 +756,7 @@
   .backup-modal{ max-width: 460px; }
   .backup-modal h2{ margin-bottom: 8px; }
   .backup-desc{
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     color: var(--ink-soft);
     line-height: 1.6;
@@ -770,12 +772,12 @@
   }
   .backup-action-row:first-of-type{ border-top: none; }
   .backup-action-row .ba-label{
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 13.5px;
     font-weight: 600;
   }
   .backup-action-row .ba-sub{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     color: var(--ink-soft);
     margin-top: 2px;
@@ -788,7 +790,7 @@
     transform: translateX(-50%) translateY(20px);
     background: var(--ink);
     color: var(--card);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12.5px;
     padding: 10px 18px;
     border-radius: 3px;
@@ -820,7 +822,7 @@
     </div>
     <div class="count-badge" id="countBadge">0 件のカード</div>
   </header>
-  <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(240,233,216,0.45);margin:-8px 0 20px;">
+  <p style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:rgba(240,233,216,0.45);margin:-8px 0 20px;">
     ※ データはこのブラウザにのみ保存されます。他の端末と共有する場合は「バックアップ」機能をご利用ください。
   </p>
 
